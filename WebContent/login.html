@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title> Login </title>
+        <script>
+            function loginValidate(){
+                var uname=document.forms["loginForm"]["userName"].value;
+                var pw= document.forms["loginForm"]["passwordField"].value;
+
+                    if (uname== null || uname==""){
+                        alert("Please enter the Username");
+                        return false;
+                    }
+                    
+                    if(pw==null || pw==""){
+                        alert("Dear " + uname + ", Please enter your password");
+                        return false;
+                    }
+                    
+            }
+        </script>
+
+    
+        <style>
+            .loginCard{
+                margin-top: 230px;
+                margin-left: 65px;
+            }
+            .loginBtn{
+                border-radius: 15px;
+				width:90px;
+				height:27px;
+                background-color: whitesmoke;
+                color:black;
+            }
+            .resetBtn{
+                 border-radius: 15px;
+				width:90px;
+				height:27px;
+                background-color: whitesmoke;
+                color:black;
+            }
+            body{
+                background-color: white;
+                font-family: calibri;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div >
+        <h1 style="margin-left:550px">Login to pharma.lk</h1>
+        <div id="loginFormContainer" class="loginFormContainer">
+            <form name="loginForm" action="displayLogin.jsp" method="POST">
+			<center>
+			
+            <table border="0">
+                
+                    
+                        <td style=""> <b>Username: </b></td>
+                        <td><input type="text" name="userName"  style="width:160px;height:27px"/></td>
+                    
+                    <tr>
+                        <td> <b>Password: </b></td>
+                        <td><input type="password" name="passwordField" style="width:160px;height:27px" /></td>
+                    </tr>
+            </table>
+                <br/>
+                <button type="reset" value="Re-enter" name="resetBtn" class="resetBtn" >Re-Enter</button>&nbsp;
+                <button type="submit" value="Login" name="action" value="signin" class="loginBtn" onclick="return loginValidate()" style="margin-left: 50px" >Login</button>
+                <h3>new user?  <a href="signup.jsp"> Join us! </a></h3>
+                 
+	   </form>
+        </div>
+        </div>
+    </body>
+</html>
